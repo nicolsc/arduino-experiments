@@ -10,7 +10,9 @@ enum {
   
   SERIAL_BAUD  = 9600,
 
-  POLL_DELAY   = 1000 //ms
+  POLL_DELAY   = 300, //ms
+  
+  MIN_DISTANCE = 100, //Minimal distance to be considered as a trigger. cm
 };
 
 void setup() {
@@ -29,8 +31,8 @@ void loop() {
   distance = (duration/2) / 29.1;
 
 
-  if (distance >= 200 || distance <= 0){
-    Serial.println("Out of range");
+  if (distance >= MIN_DISTANCE || distance <= 0){
+    Serial.println('Out of range');
   }
   else {
     Serial.print(distance);
