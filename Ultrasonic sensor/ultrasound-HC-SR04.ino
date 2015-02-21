@@ -28,7 +28,7 @@ void loop() {
 
 
   if (distance >= MIN_DISTANCE || distance <= 0){
-    Serial.println('Out of range');
+    Serial.println("Out of range");
   }
   else {
     Serial.print(distance);
